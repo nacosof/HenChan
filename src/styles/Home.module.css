@@ -1,0 +1,573 @@
+.centerContainer {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.henchanText {
+  position: absolute;
+  margin-bottom: 650px;
+  color: #fff;
+  font-size: 5rem;
+  font-weight: bold;
+  text-shadow: 0 2px 16px #8e054e;
+  background: linear-gradient(90deg, #6b1158, #31031c, #5d1686, #650ca0, #740f9c, #341381, #440424);
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: background-position 2.2s cubic-bezier(.4,2,.6,1);
+  cursor: pointer;
+}
+
+.henchanText:hover {
+  background-position: 100% 0;
+}
+
+@media (max-width: 1024px) {
+  .henchanText {
+    margin: 0 70px;
+    margin-top: -600px;
+  }
+}
+@media (max-width: 640px) {
+  .henchanText {
+    margin: 0 70px;
+    margin-top: -550px
+  }
+}
+
+.ProfileText, .MangaText {
+  color: #222;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: color 0.4s cubic-bezier(.4,2,.6,1);
+  cursor: pointer;
+  padding-bottom: 6px;
+  position: relative;
+}
+
+.ProfileText:hover {
+  color: #8e054e;
+}
+
+.ProfileText::after, .MangaText::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 20px;
+  bottom: -2px;
+  width: 70%;
+  height: 4px;
+  border-radius: 2px;
+  background: #722751;
+  opacity: 0;
+  transform: scaleX(0.7);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+
+.ProfileTextActive::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.SignInContainer {
+  top: 0px;
+  left: 0px;
+  position: relative;
+  width: 600px;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: 3px solid #341381;
+  border: 3px solid #e7a6c9; /* розовая рамка, как у шапки */
+  border: 3px solid #912b92; /* чуть более яркая рамка */
+  border-radius: 15px;
+  background: linear-gradient(120deg, #ffe0f7 0%, #fcb7d4 40%, #b8c6ff 100%);
+  box-shadow:
+    0 8px 32px 0 #b8c6ff55,
+    0 0 0 8px #fcb7d433 inset;
+}
+
+.MangaText:hover {
+  color: #8e054e;
+}
+
+.MangaTextActive::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.mangaGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.mangaImageContainer {
+  left: 0px;
+  top: 0px;
+  width: 300px;
+  height: 500px;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  margin: 32px 0;
+}
+
+.mangaImage {
+  border-radius: 24px;
+  transition: transform 0.4s cubic-bezier(.4,2,.6,1);
+}
+
+.mangaImageContainer:hover .mangaImage {
+  transform: scale(1.06);
+}
+
+@media (max-width: 1024px) {
+  .mangaImageContainer {
+    width: 28%;
+    min-width: 200px;
+    max-width: 200px;
+    height: 400px;
+    margin: 4px 0;
+    top: 0px;
+  }
+}
+
+@media (max-width: 640px) {
+  .mangaImageContainer {
+    width: 28%;
+    min-width: 175px;
+    max-width: 200px;
+    height: 300px;
+    margin: 4px 0;
+    top: 90px;
+  }
+}
+
+.topGrayBar {
+  position: relative;
+  width: 95hv;
+  background: linear-gradient(100deg, #f7b2e6 0%, #e0c3fc 60%, #b8c6ff 100%);
+  border: 2px solid #e7a6c9;
+  padding: 10px 48px 10px 31px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  box-shadow:
+    0 4px 32px 0 #fcb7d4aa,
+    0 2px 8px 0 #b8c6ff55;
+  z-index: 100;
+  /* Лёгкое внутреннее свечение */
+  box-shadow:
+    0 4px 32px 0 #fcb7d4aa,
+    0 2px 8px 0 #b8c6ff55,
+    0 0 0 4px #ffe0f733 inset;
+}
+
+.headerLeft, .headerRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.MangaText {
+  margin: 0 40px;
+  margin-top: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.ProfileText {
+  margin: 0 50px; 
+  margin-top: 5px;
+}
+
+@media (max-width: 1024px) {
+  .MangaText {
+    margin: 0 60px;
+    margin-top: 5px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media (max-width: 640px) {
+  .MangaText {
+    margin: 0 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (max-width: 1024px) {
+  .ProfileText {
+    margin: 0 40px;
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .topGrayBar {
+    padding: 10px 16px 12px 16px;
+  }
+  .headerLeft, .headerRight {
+    gap: 12px;
+  }
+  .ProfileText, .MangaText {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 640px) {
+  .topGrayBar {
+    padding: 14px 4px 8px 4px;
+  }
+  .headerLeft, .headerRight {
+    gap: 6px;
+  }
+  .ProfileText, .MangaText {
+    font-size: 1.4rem;
+  }
+}
+
+.menuIcon {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 32px;
+  height: 28px;
+  justify-content: center;
+  z-index: 101;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.15s cubic-bezier(.4,2,.6,1);
+}
+.menuIcon:active {
+  transform: translateY(-50%) scale(0.92);
+}
+.menuIconBar {
+  width: 100%;
+  height: 4px;
+  background: #222;
+  border-radius: 2px;
+  transition: width 0.5s cubic-bezier(.4,2,.6,1), background 0.5s cubic-bezier(.4,2,.6,1), transform 0.4s cubic-bezier(.4,2,.6,1), opacity 0.3s;
+}
+.menuIcon:hover .menuIconBar {
+  width: 44px;
+  background: #8e054e;
+}
+.menuIconActive .menuIconBar {
+  background: #8e054e;
+  width: 44px;
+}
+.menuIconActive .menuIconBar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.menuIconActive .menuIconBar:nth-child(2) {
+  opacity: 0;
+}
+.menuIconActive .menuIconBar:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+.headerWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.sideMenu {
+  position: absolute;
+  top: 71px;
+  left: -260px;
+  width: 240px;
+  height: 909px;
+  z-index: 200;
+  transition: left 0.4s cubic-bezier(.4,2,.6,1);
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  background: rgba(255, 248, 252, 0.85);
+  background: linear-gradient(180deg, #ffe0f7 0%, #fcb7d4 60%, #f9e7b7 100%);
+  border: 2px solid #e7a6c9;
+  box-shadow: 0 8px 32px 0 #f9e7b7aa, 0 0 0 6px #fff8fc55 inset;
+}
+.sideMenuOpen {
+  left: 0;
+}
+
+@media (max-width: 1024px) {
+  .sideMenu {
+    width: 190px;
+    height: 1120px;
+    top: 62px;
+  }
+}
+@media (max-width: 640px) {
+  .sideMenu {
+    width: 190px;
+    height: 915px;
+    top: 56px;
+  }
+}
+
+.mangaRowAppear {
+  opacity: 0;
+  transform: translateY(80px);
+  animation: mangaRowFadeIn 0.8s cubic-bezier(.4,2,.6,1) 0.1s forwards;
+}
+
+@keyframes mangaRowFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.MangaContainer {
+  position: relative;
+  top: -50px;
+  left: 15px;
+  width: 200px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: 2.5px solid #e16fac; /* розовая рамка */
+  border-radius: 15px;
+  background: linear-gradient(100deg, #fd9de5 0%, #fcb7d4 60%, #b8c6ff 100%);
+  box-shadow: 0 2px 16px #fcb7d455, 0 0 0 4px #fff8fc33 inset;
+  color: #8e054e;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.5s, box-shadow 0.3s, transform 0.15s;
+}
+
+.MangaContainer:hover {
+  background: linear-gradient(100deg, #fcb7d4 0%, #e0c3fc 60%, #f9e7b7 100%);
+  box-shadow: 0 4px 32px #b8c6ff77, 0 0 0 6px #fcb7d433 inset;
+  transform: scale(1.03) rotate(-1deg);
+  color: #b8006e;
+}
+
+.mangaText {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color:#c21e93;
+  width: 150px;
+}
+
+@media (max-width: 1024px) {
+  .MangaContainer {
+    width: 165px;
+    height: 25px;
+    top: -60px;
+    left: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .MangaContainer {
+    width: 160px;
+    height: 25px;
+    top: -60px;
+    left: 10px;
+  }
+}
+
+.SignInText {
+  color: #222;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: color 0.4s cubic-bezier(.4,2,.6,1);
+  cursor: pointer;
+  padding-bottom: 6px;
+  position: relative;
+  margin: 0 30px;
+}
+.SignInText:hover {
+  color: #8e054e;
+}
+.SignInText.SignInTextActive::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+.SignInText::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: -2px;
+  height: 4px;
+  border-radius: 2px;
+  background: #722751;
+  opacity: 0;
+  transform: scaleX(0.7);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .SignInText {
+    font-size: 1.5rem; 
+    top: 3px;
+  }
+}
+
+@media (max-width: 640px) {
+  .SignInText {
+    font-size: 1.4rem; 
+    top: 0px;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #722751;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.2s;
+}
+.closeButton:hover {
+  color: #b77cd7;
+}
+
+.signInOverlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 224, 247, 0.75) 0%,
+    rgba(252, 183, 212, 0.75) 30%,
+    rgba(224, 195, 252, 0.75) 70%,
+    rgba(249, 231, 183, 0.75) 100%
+  );
+  z-index: 999;
+}
+
+.henChanSignInText{
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #8e054e;
+  position: relative;
+  width: 0px;
+  left: 380px;
+  top: -120px;
+}
+
+.signInImage {
+  position: relative;
+  width: 245px;
+  left: 264px;
+  border-radius: 12px;
+  top: 0px;
+}
+
+.EmailContainer {
+  position: relative;
+  top: -60px;
+  left: 190px;
+  width: 250px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 2.5px solid #e16fac; /* розовая рамка */
+  border-radius: 15px;
+  background: linear-gradient(100deg, #fd9de5 0%, #fcb7d4 60%, #b8c6ff 100%);
+  box-shadow: 0 2px 16px #fcb7d455, 0 0 0 4px #fff8fc33 inset;
+}
+.PasswordContainer {
+  position: relative;
+  top: 10px;
+  left: -65px;
+  width: 250px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 2.5px solid #e16fac; /* розовая рамка */
+  border-radius: 15px;
+  background: linear-gradient(100deg, #fd9de5 0%, #fcb7d4 60%, #b8c6ff 100%);
+  box-shadow: 0 2px 16px #fcb7d455, 0 0 0 4px #fff8fc33 inset;
+}
+
+.EmailContainer:focus,
+.PasswordContainer:focus {
+  outline: none; 
+  border-color: #c21e93; 
+}
+
+.EmailContainer::placeholder,
+.PasswordContainer::placeholder {
+  color: #c21e93; 
+  opacity: 1; 
+}
+
+.JoinContainer {
+  position: relative;
+  width: 250px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 2.5px solid #e16fac; /* розовая рамка */
+  border-radius: 15px;
+  background: linear-gradient(100deg, #fd9de5 0%, #fcb7d4 60%, #b8c6ff 100%);
+  box-shadow: 0 2px 16px #fcb7d455, 0 0 0 4px #fff8fc33 inset;
+  background-size: 300% 300%;
+  background-position: 0% 50%;
+  transition: background-position 0.7s cubic-bezier(.4,2,.6,1), transform 0.15s cubic-bezier(.4,2,.6,1);
+  cursor: pointer;
+  top: 100px;
+  left: -320px;
+}
+
+.JoinContainer:hover {
+  background-position: 100% 50%;
+}
+
+.JoinContainer:active {
+  transform: scale(0.96) rotate(-1deg);
+  box-shadow: 0 2px 16px #a84ce4;
+}
+
+.JoinText {
+  color: #c21e93;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
