@@ -4,6 +4,7 @@ import styles from '../styles/Cap.module.css';
 import SignIn from './sign_in';
 import SideMenu from './side_menu';
 import { checkUser } from '../db';
+import SignUp from './sign_up';
 
 interface CapProps {
   showSignIn: boolean;
@@ -13,13 +14,14 @@ interface CapProps {
 export default function Cap({ showSignIn, setShowSignIn }: CapProps) {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState<null | 'manga' | 'signin'>(null);
+  const [activeTab, setActiveTab] = useState<null | 'manga' | 'signin' | 'signup'>(null);
   const [loginInput, setLoginInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
   const [userName, setUserName] = useState('');
   const [loginError, setLoginError] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [logoutActive, setLogoutActive] = useState(false);
+  const [showSignUp, setShowSignUp] = useState(false);
 
   useEffect(() => {
     const savedName = localStorage.getItem('userName');
@@ -71,6 +73,11 @@ export default function Cap({ showSignIn, setShowSignIn }: CapProps) {
     }, 350);
   };
 
+  const handleSignUpClick = () => {
+    setActiveTab('signup');
+    setShowSignUp(true);
+  };
+
   return (
     <>
       <div className={styles.headerWrapper}>
@@ -117,12 +124,21 @@ export default function Cap({ showSignIn, setShowSignIn }: CapProps) {
                 )}
               </div>
             ) : (
-              <span
-                className={styles.SignInText + (showSignIn || activeTab === 'signin' ? ' ' + styles.SignInTextActive : '')}
-                onClick={handleSignInClick}
-              >
-                SignIn
-              </span>
+              <>
+                <span
+                  className={styles.SignInText + (showSignIn || activeTab === 'signin' ? ' ' + styles.SignInTextActive : '')}
+                  onClick={handleSignInClick}
+                >
+                  SignIn
+                </span>
+                <span
+                  className={styles.SignUpText + (activeTab === 'signup' ? ' ' + styles.SignUpTextActive : '')}
+                  onClick={handleSignUpClick}
+                  style={{ cursor: 'pointer' }}
+                >
+                  SignUp
+                </span>
+              </>
             )}
           </div>
         </div>
@@ -136,6 +152,16 @@ export default function Cap({ showSignIn, setShowSignIn }: CapProps) {
         setPasswordInput={setPasswordInput}
         onJoin={handleJoin}
         onClose={() => setShowSignIn(false)}
+        loginError={loginError}
+      />
+      <SignUp
+        show={showSignUp}
+        loginInput={loginInput}
+        setLoginInput={setLoginInput}
+        passwordInput={passwordInput}
+        setPasswordInput={setPasswordInput}
+        onJoin={() => setShowSignUp(false)}
+        onClose={() => setShowSignUp(false)}
         loginError={loginError}
       />
     </>

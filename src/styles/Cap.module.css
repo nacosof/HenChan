@@ -1,4 +1,4 @@
-.SignInText, .MangaText {
+.SignInText, .MangaText, .SignUpText {
     color: #222;
     font-size: 2rem;
     font-weight: bold;
@@ -8,11 +8,8 @@
     position: relative;
   }
   
-  .SignInText:hover {
-    color: #8e054e;
-  }
   
-  .SignInText::after, .MangaText::after {
+  .SignInText::after, .MangaText::after, .SignUpText::after {
     content: "";
     display: block;
     position: absolute;
@@ -27,25 +24,34 @@
     transition: opacity 0.3s, transform 0.3s;
     pointer-events: none;
   }
+
+  .MangaText:hover {
+    color: #8e054e;
+  }
+
+  .SignInText:hover {
+    color: #8e054e;
+  }
+
+  .SignUpText:hover {
+    color: #8e054e;
+  }
   
   .SignInTextActive::after {
     opacity: 1;
     transform: scaleX(1);
-  }
-  
-  .MangaText:hover {
-    color: #8e054e;
   }
 
   .MangaTextActive::after {
     opacity: 1;
     transform: scaleX(1);
   }
-
-  /* .MangaText:hover::after {
+  
+  .SignUpTextActive::after {
     opacity: 1;
     transform: scaleX(1);
-  } */
+  }
+
   
   
   .topGrayBar {
@@ -75,7 +81,7 @@
   }
   
   .SignInText {
-    margin: 0 40px;
+    margin: 0 30px;
     margin-top: 5px;
     padding-left: 20px;
     padding-right: 20px;
@@ -83,6 +89,11 @@
   
   .MangaText {
     margin: 0 50px; 
+    margin-top: 5px;
+  }
+
+  .SignUpText {
+    margin: 0 -30px; 
     margin-top: 5px;
   }
   
@@ -103,7 +114,26 @@
   }
   @media (max-width: 1024px) {
     .SignInText {
-      margin: 0 40px;
+      margin: 0 -10px;
+      margin-top: 5px;
+    }
+  }
+  @media (max-width: 640px) {
+    .SignInText {
+      margin: 0 -10px;
+      margin-top: 5px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .SignUpText {
+      margin: 0 0px;
+      margin-top: 5px;
+    }
+  }
+  @media (max-width: 640px) {
+    .SignUpText {
+      margin: 0 0px;
       margin-top: 5px;
     }
   }
@@ -115,7 +145,7 @@
     .headerLeft, .headerRight {
       gap: 12px;
     }
-    .SignInText, .MangaText {
+    .SignInText, .MangaText, .SignUpText {
       font-size: 1.5rem;
     }
   }
@@ -126,7 +156,7 @@
     .headerLeft, .headerRight {
       gap: 6px;
     }
-    .SignInText, .MangaText {
+    .SignInText, .MangaText, .SignUpText  {
       font-size: 1.4rem;
     }
   }
@@ -186,13 +216,21 @@
   .ProfileContainer {
     position: absolute;
     top: 50px;
-    left: -5px;
-    width: 180px;
+    left: 15px;
+    width: 170px;
     height: 155px;
     border-radius: 15px;
     border: 2px solid #f5ffb1;
     background: linear-gradient(100deg, #f7b2e6 0%, #e0c3fc 60%, #b8c6ff 100%);
   }
+
+  @media (max-width: 1024px) {
+    .ProfileContainer {
+      left: -45px;
+      top: 35px;
+      width: 140px;
+      height: 150px;
+    }}
 
   .ProfileText,
   .SettingsText,
@@ -213,6 +251,45 @@
   .ProfileText { top: 20px; left: 32px; }
   .SettingsText { top: 65px; left: 45px; }
   .LogoutText { top: 105px; left: 45px; }
+
+  @media (max-width: 1024px) {
+    .ProfileText {
+      margin: 0 -10px;
+      margin-top: 5px;
+    }
+  }
+  @media (max-width: 640px) {
+    .ProfileText {
+      margin: 0 -15px;
+      margin-top: -5px;
+    }
+  }
+  @media (max-width: 1024px) {
+    .SettingsText {
+      margin: 0 -10px;
+      margin-top: 5px;
+    }
+  }
+  @media (max-width: 640px) {
+    .SettingsText {
+      margin: 0 -15px;
+      margin-top: -5px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .LogoutText {
+      margin: 0 -10px;
+      margin-top: 5px;
+    }
+  }
+  @media (max-width: 640px) {
+    .LogoutText {
+      margin: 0 -12px;
+      margin-top: -4px;
+    }
+  }
+
 
   .ProfileText:hover,
   .SettingsText:hover,
