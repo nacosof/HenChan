@@ -42,6 +42,15 @@
   }
 }
 
+@media (max-width: 370px) {
+  .henchanText {
+    font-size: 3rem;
+    margin: 10px 0px; 
+    top: 5px;
+    left: 35%;
+  }
+}
+
 
 .mangaGrid {
   display: flex;
@@ -93,6 +102,18 @@
     height: 300px;
     margin: 4px 0;
     top: 90px;
+  }
+}
+
+@media (max-width: 370px) {
+  .mangaImageContainer {
+    width: 28%;
+    min-width: 340px;
+    max-width: 200px;
+    height: 570px;
+    margin: 4px 0;
+    top: 90px;
+    left: 40px;
   }
 }
 

@@ -3,7 +3,7 @@
     left: 0px;
     position: relative;
     width: 600px;
-    min-height: 320px;
+    height: 325px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,6 +18,11 @@
       0 8px 32px 0 #b8c6ff55,
       0 0 0 8px #fcb7d433 inset;
   }
+
+  @media (max-width: 640px) {.SignUpContainer {
+    width: 360px;
+    height: 295px;
+      }}
 
   .SignUpText {
     color: #222;
@@ -107,14 +112,29 @@
     left: 380px;
     top: -120px;
   }
+
+  @media (max-width: 640px) {.henChanSignUpText {
+    position: absolute;
+    font-size: 1.6rem;
+    left: 130px;
+    top: 30px;
+      }}
   
   .signUpImage {
     position: relative;
-    width: 245px;
-    left: 252px;
+    width: 226px;
+    left: 244px;
     border-radius: 12px;
     top: 0px;
   }
+
+  @media (max-width: 640px) {.signUpImage{
+    position: relative;
+    width: 157px;
+    left: 242px;
+    border-radius: 12px;
+    top: -100000px;
+      }}
   
   .EmailContainer {
     position: relative;
@@ -136,6 +156,15 @@
     padding-left: 20px;
   }
 
+  @media (max-width: 640px) {.EmailContainer{
+    position: absolute;
+    top: 70px;
+    left: 55px;
+    width: 220px;
+    height: 50px;
+    border-radius: 15px;
+      }}
+
   .PasswordContainer {
     position: relative;
     top: 10px;
@@ -155,6 +184,15 @@
   .PasswordContainer {
     padding-left: 20px;
   }
+
+  @media (max-width: 640px) {.PasswordContainer{
+    position: absolute;
+    top: 140px;
+    left: 55px;
+    width: 220px;
+    height: 50px;
+    border-radius: 15px;
+      }}
   
   .EmailContainer:focus,
   .PasswordContainer:focus {
@@ -202,6 +240,15 @@
     font-size: 1.2rem;
     font-weight: bold;
   }
+  
+  @media (max-width: 640px) {.JoinContainer{
+    position: absolute;
+    top: 215px;
+    left: 48px;
+    width: 255px;
+    height: 50px;
+    border-radius: 15px;
+      }}
 
 .Error {
   border: 2px solid #c42a19 !important;

@@ -56,7 +56,7 @@
   
   .topGrayBar {
     position: relative;
-    width: 95hv;
+    width: 100hv;
     background: linear-gradient(100deg, #f7b2e6 0%, #e0c3fc 60%, #b8c6ff 100%);
     border: 2px solid #e7a6c9;
     padding: 10px 48px 10px 31px;
@@ -73,7 +73,13 @@
       0 2px 8px 0 #b8c6ff55,
       0 0 0 4px #ffe0f733 inset;
   }
-  
+
+  @media (max-width: 370px){.topGrayBar{
+    position: relative;
+    width: 120%;
+  }}
+ 
+
   .headerLeft, .headerRight {
     display: flex;
     align-items: center;
@@ -120,10 +126,12 @@
   }
   @media (max-width: 640px) {
     .SignInText {
-      margin: 0 -10px;
+      position:relative;
+      left: -40px;
       margin-top: 5px;
     }
   }
+
 
   @media (max-width: 1024px) {
     .SignUpText {
@@ -134,6 +142,14 @@
   @media (max-width: 640px) {
     .SignUpText {
       margin: 0 0px;
+      margin-top: 5px;
+    }
+  }
+
+  @media (max-width: 370px) {
+    .SignUpText {
+      position:relative;
+      left: -20px;
       margin-top: 5px;
     }
   }
@@ -216,7 +232,7 @@
   .ProfileContainer {
     position: absolute;
     top: 50px;
-    left: 15px;
+    left: -15px;
     width: 170px;
     height: 155px;
     border-radius: 15px;
@@ -231,6 +247,14 @@
       width: 140px;
       height: 150px;
     }}
+
+    @media (max-width: 640px) {
+      .ProfileContainer {
+        left: -85px;
+        top: 35px;
+        width: 140px;
+        height: 150px;
+      }}
 
   .ProfileText,
   .SettingsText,

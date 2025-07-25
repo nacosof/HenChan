@@ -7,7 +7,7 @@ const mangaPages = Array.from({ length: 25 }, (_, i) => `/images/manga_2/page${i
 export default function Manga2() {
   return (
     <>
-      <Cap />
+      <Cap showSignIn={false} setShowSignIn={() => {}} />
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 48 }}>
         {mangaPages.map((src, idx) => (
           <img
